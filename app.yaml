@@ -1,0 +1,37 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: ecomProject
+  labels:
+    app: ecomProject
+spec:
+  type: ClusterIP
+  selector:
+    app: ecomProject
+  ports:
+    - name: tcp
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: ecomProject
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ecomProject
+  template:
+    metadata:
+      labels:
+        app: ecomProject
+        version: v1
+    spec:
+      containers:
+      - name: ecomProject
+        image: ecomProject
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
