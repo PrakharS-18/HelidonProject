@@ -1,7 +1,7 @@
 pipeline {
     agent any
     parameters {
-        booleanParam(name: 'executeTests', default: true, description: 'whether to allow tests or not')
+        booleanParam(name: 'executeTests', defaultValue: true, description: 'whether to allow tests or not')
     }
     tools {
         maven 'Maven'
