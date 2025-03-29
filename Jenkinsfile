@@ -10,7 +10,7 @@ pipeline {
         stage("build") {
             steps {
                echo "building the application with version as ${NEW_VERSION}"
-               sh "mvn clean install -DskipTests"
+               bat "mvn clean install -DskipTests"
             }
         }
 
