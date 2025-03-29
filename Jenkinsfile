@@ -1,9 +1,15 @@
 pipeline {
     agent any
+    tools {
+        maven 'Maven'
+    }
+    environment {
+        NEW_VERSION = '1.3.0'
+    }
     stages {
         stage("build") {
             steps {
-               echo 'building the application'
+               echo "building the application with version as ${NEW_VERSION}"
             }
         }
 
