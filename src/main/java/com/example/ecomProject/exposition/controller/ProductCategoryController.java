@@ -15,7 +15,6 @@ import java.util.List;
 import java.util.logging.Logger;
 
 @Path("/productCategory")
-@Log
 public class ProductCategoryController {
 
     private static final Logger log = Logger.getLogger(ProductCategoryController.class.getName());
